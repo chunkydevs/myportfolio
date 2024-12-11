@@ -1,0 +1,335 @@
+/* Define color variables for both modes */
+:root {
+    /* Dark Mode */
+    --bg-color-dark: #121212;
+    --text-color-dark: #00ff00;
+    --navbar-bg-dark: #222;
+    --section-bg-dark: #1a1a1a;
+    --button-bg-dark: #00ff00;
+    --footer-bg-dark: #222;
+
+    /* Light Mode */
+    --bg-color-light: gray;
+    --text-color-light: white;
+    --navbar-bg-light: #fff;
+    --section-bg-light: #ffffff;
+    --button-bg-light: #007bff;
+    --footer-bg-light: #fff;
+}
+
+/* Retro Body */
+.retro-body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+    text-shadow: 0 0 5px var(--text-color-dark), 0 0 10px var(--text-color-dark), 0 0 15px var(--text-color-dark);
+    line-height: 1.8;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--navbar-bg-dark);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid var(--text-color-dark);
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .logo {
+    color: var(--text-color-dark);
+    font-size: 28px;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+}
+
+.navbar .nav-links li a {
+    color: var(--text-color-dark);
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.2s ease;
+}
+
+.navbar .nav-links li a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 3px;
+    background: var(--text-color-dark);
+    transition: all 0.4s ease;
+    transform: translate(-50%, -50%) scale(0, 1);
+}
+
+.navbar .nav-links li a:hover::before {
+    transform: translate(-50%, -50%) scale(0.3, 1);
+}
+
+.navbar .nav-links li a:hover {
+    color: #ff0077;
+}
+
+/* Button */
+.retro-btn {
+    background-color: var(--button-bg-dark);
+    color: #000;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.retro-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--button-bg-dark);
+    background-color: #00cc00; /* Adding a brighter hover effect */
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg-dark);
+    padding: 20px;
+    text-align: center;
+    color: var(--text-color-dark);
+    margin-top: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Section Layout */
+.container {
+    width: 85%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* About Section */
+.about {
+    background-color: var(--section-bg-dark);
+    padding: 60px 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 3px;
+    background: var(--text-color-dark);
+    transition: all 0.4s ease;
+    transform: translate(-50%, -50%) scale(0, 1);
+}
+
+.about:hover::before {
+    transform: translate(-50%, -50%) scale(0, 1);
+}
+
+.retro-text {
+    color: var(--text-color-dark);
+    text-shadow: 0 0 5px var(--text-color-dark);
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* Projects Section */
+.projects {
+    background-color: var(--section-bg-dark);
+    padding: 60px 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.9);
+}
+
+/* Image Sizing */
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Slider for Project Screenshots */
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    display: none;
+    border-radius: 5px;
+}
+
+.slider img.active {
+    display: block;
+}
+
+/* Light Mode Styles */
+@media (prefers-color-scheme: light) {
+    .retro-body {
+        background-color: var(--bg-color-light);
+        color: var(--text-color-light);
+        text-shadow: none;
+    }
+
+    .navbar {
+        background-color: var(--navbar-bg-light);
+        border-bottom: 4px solid var(--text-color-light);
+    }
+
+    .navbar .logo {
+        color: var(--text-color-light);
+    }
+
+    .navbar .nav-links li a {
+        color: var(--text-color-light);
+    }
+
+    .retro-btn {
+        background-color: var(--button-bg-light);
+        color: #000;
+    }
+
+    footer {
+        background-color: var(--footer-bg-light);
+        color: var(--text-color-light);
+    }
+
+    .about, .projects {
+        background-color: var(--section-bg-light);
+    }
+}
+
+/* Apply dark theme by default */
+body.dark-theme {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+body.light-theme {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    background-color: #ddd;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    height: 20px;
+    width: 0;
+    background-color: #ff0077;
+    border-radius: 5px;
+    transition: width 1s ease;
+}
+
+/* Animation for the progress bar */
+#about:hover #progress-bar {
+    width: 10%;
+}
+
+#projects:hover #progress-bar {
+    width: 50%;
+}
+
+#contact:hover #progress-bar {
+    width: 100%;
+}
+
+/* Basic button styling */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 30px; /* Square button width */
+    height: 30px; /* Square button height */
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 5px; /* Optional rounded corners for the button */
+    position: absolute; /* Position it in the navbar */
+    top: 20px; /* Adjust the distance from the top */
+    right: 20px; /* Position it in the top-right corner */
+    transition: background-color 0.3s ease;
+}
+
+/* The switch itself */
+.toggle-switch {
+    width: 20px; /* Smaller width for the toggle */
+    height: 20px; /* Smaller height for the toggle */
+    background-color: #bbb;
+    border-radius: 50%; /* Round shape */
+    position: absolute;
+    left: 5px; /* Adjusted position */
+    transition: left 0.3s ease, background-color 0.3s ease;
+}
+
+/* Switch movement when toggled */
+.theme-toggle.dark-mode .toggle-switch {
+    left: 15px; /* Move the switch to the other side when toggled */
+    background-color: #4caf50; /* Green for dark mode */
+}
+
+/* Label for the mode (optional, if you want text next to the switch) */
+.mode-text {
+    display: none; /* Hides the text for now, can be shown if needed */
+}
+
+/* Dark mode text style */
+.theme-toggle.dark-mode .mode-text {
+    color: #fff;
+}
+
+.arrow {
+    z-index: 0;
+    margin-right: 100px;  
+}
